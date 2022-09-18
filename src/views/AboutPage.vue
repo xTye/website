@@ -3,12 +3,13 @@ import { DOM } from "@/classes/DOM";
 import { SizeCalculator } from "@/classes/SizeCalculator";
 import { character } from "@/classes/Character";
 import { defineComponent, ref } from "vue";
+import { router } from "@/router";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default defineComponent({
   name: "AboutPage",
   setup() {
     const gameWrapper = ref<HTMLElement>();
-
     return {
       gameWrapper,
     };
@@ -26,6 +27,13 @@ export default defineComponent({
     };
   },
   mounted() {
+    if (localStorage.getItem("reloaded")) {
+      localStorage.removeItem("reloaded");
+    } else {
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
+
     this.prepareForGame();
     document.addEventListener("keydown", this.onKeyDown);
     document.addEventListener("mouseup", this.onClickDown);
@@ -72,13 +80,31 @@ export default defineComponent({
       const char = character.getCharacterElement();
       const el: HTMLDivElement = event.target;
       if (!char) return;
-
-      console.log(el.id);
       const coord = el.id.split(":");
       const location = {
         x: +coord[0],
         y: +coord[1],
       };
+      // Change when there are more about me.
+      if (!location.y) return;
+
+      if (location.x == Math.floor(this.area.size.x / 2) && location.y == 1)
+        router.push("/videos");
+      else if (
+        location.x == Math.floor(this.area.size.x / 2) &&
+        location.y == this.area.size.y
+      )
+        router.push("/pictures");
+      else if (
+        location.y == Math.floor(this.area.size.y / 2) &&
+        location.x == 1
+      )
+        router.push("/resume");
+      else if (
+        location.y == Math.floor(this.area.size.y / 2) &&
+        location.x == this.area.size.x
+      )
+        router.push("/");
 
       char.classList.remove(...char.classList);
       character.moveDirect(location);
@@ -132,39 +158,70 @@ export default defineComponent({
       el.classList.remove(...el.classList);
       character.setDirection(direction);
       character.move(this.area.size);
+
+      // Change when there are more about me.
+      if (
+        character.coords.x == Math.floor(this.area.size.x / 2) &&
+        character.coords.y == 1
+      )
+        router.push("/videos");
+      else if (
+        character.coords.x == Math.floor(this.area.size.x / 2) &&
+        character.coords.y == this.area.size.y
+      )
+        router.push("/pictures");
+      else if (
+        character.coords.y == Math.floor(this.area.size.y / 2) &&
+        character.coords.x == 1
+      )
+        router.push("/resume");
+      else if (
+        character.coords.y == Math.floor(this.area.size.y / 2) &&
+        character.coords.x == this.area.size.x
+      )
+        router.push("/");
+
       this.drawSnake();
     },
   },
+  components: { NavigationBar },
 });
 </script>
 
 <template>
   <!-- <div class="w-screen h-screen bg-white"></div> -->
-  <div class="w-screen h-screen">
+  <div class="flex flex-col w-screen h-screen bg-black">
+    <NavigationBar />
     <div
-      class="flex justify-center items-center z-0 absolute w-full h-full font-roboto"
+      class="relative flex flex-wrap justify-center items-center w-full h-full"
     >
-      <div class="flex flex-col justify-between w-4/5 items-center">
-        <div class="flex flex-row justify-center">
-          <div class="w-full pr-10 mr-10 border-r-2 border-white">
-            <div class="text-6xl text-white">Hello!</div>
-            <div class="text-xl text-white text-justify">
-              My name is Robert Riley and my middle name is Tyler, but my
-              friends call me Tye. Confusing right? Imagine being me! I go by
-              Tyler because 3 other people in my family are named Robert, so
-              that title is reserved to the elders.
+      <div
+        class="flex flex-wrap justify-center items-center w-full h-full"
+        ref="gameWrapper"
+      ></div>
+      <div
+        class="absolute flex justify-center items-center w-full h-full font-roboto"
+      >
+        <div
+          class="flex flex-col justify-between z-0 w-4/5 items-center overflow-hidden"
+        >
+          <div class="flex flex-row justify-center">
+            <div class="w-full pr-10 mr-10 border-r-2 border-white">
+              <div class="text-6xl text-white">Hello!</div>
+              <div class="text-xl text-white text-justify">
+                My name is Robert Riley and my middle name is Tyler, but my
+                friends call me Tye. Confusing right? Imagine being me! I go by
+                Tyler because 3 other people in my family are named Robert, so
+                that title is reserved to the elders.
+              </div>
+            </div>
+            <div class="flex items-center w-auto justify-center">
+              <img src="@/assets/aboutmepicture.png" class="w-full h-auto" />
             </div>
           </div>
-          <div class="flex items-center w-auto justify-center">
-            <img src="../assets/aboutmepicture.png" class="w-full h-auto" />
-          </div>
+          <div class="mt-5 text-white">(Hint: use your arrow keys)</div>
         </div>
-        <div class="mt-5 text-white">(Hint: use your arrow keys)</div>
       </div>
     </div>
-    <div
-      class="flex flex-wrap justify-center items-center w-full h-full overflow-hidden bg-black"
-      ref="gameWrapper"
-    ></div>
   </div>
 </template>

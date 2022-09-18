@@ -1,58 +1,27 @@
 <script lang="ts">
 import NavigationBar from "../components/NavigationBar.vue";
+import { VideoPlayer } from "@videojs-player/vue";
 import "video.js/dist/video-js.css";
 
 export default {
-  name: "PicturesPage",
+  name: "VideosPage",
   components: {
     NavigationBar,
-  },
-  setup() {
-    const images = [
-      "DSC_0044thumb.jpg",
-      "DSC_0044thumb.jpg",
-      "DSC_0057thumb.jpg",
-      "DSC_0057thumb.jpg",
-      "DSC_0122thumb.jpg",
-      "DSC_0122thumb.jpg",
-      "DSC_0148thumb.jpg",
-      "DSC_0148thumb.jpg",
-      "DSC_0152thumb.jpg",
-      "DSC_0152thumb.jpg",
-      "DSC_0457thumb.jpg",
-      "DSC_0457thumb.jpg",
-      "DSC_0479thumb.jpg",
-      "DSC_0479thumb.jpg",
-      "DSC_0809thumb.jpg",
-      "DSC_0809thumb.jpg",
-    ];
-
-    return { images };
-  },
-  metaInfo: {
-    script: [
-      { src: "../node_modules/video.js/dist/video.min.js" },
-      { src: "../dist/Youtube.min.js" },
-    ],
+    VideoPlayer,
   },
 };
 </script>
 
 <template>
-  <div
-    class="relative flex items-center justify-center h-screen overflow-hidden bg-black"
-  >
+  <div class="flex flex-col pb-5 bg-black">
     <NavigationBar />
-    <div class="w-full h-full flex justify-center items-center">
-      <video
-        id="vid1"
-        class="video-js vjs-default-skin"
+    <div class="flex justify-center items-center w-full h-full px-20">
+      <video-player
+        :src="require('@/assets/fallingdown.mp4')"
         controls
-        preload="auto"
-        width="640"
-        height="264"
-        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
-      ></video>
+        :loop="true"
+        :volume="0.6"
+      />
     </div>
   </div>
 </template>

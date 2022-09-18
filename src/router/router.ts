@@ -1,8 +1,12 @@
 import { RouteRecordRaw } from "vue-router";
 import HomePage from "@/views/HomePage.vue";
 import AboutPage from "@/views/AboutPage.vue";
+import ResumePage from "@/views/ResumePage.vue";
 import PicturesPage from "@/views/PicturesPage.vue";
 import VideosPage from "@/views/VideosPage.vue";
+import ProjectsPage from "@/views/ProjectsPage.vue";
+import BlogPage from "@/views/BlogPage.vue";
+import CodePage from "@/views/CodePage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -15,15 +19,11 @@ export const routes: Array<RouteRecordRaw> = [
     name: "AboutPage",
     component: AboutPage,
   },
-  // {
-  //   path: "/resume",
-  //   name: "ResumePage",
-  //   meta: {
-  //     title: "Resume",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/ResumePage.vue"),
-  // },
+  {
+    path: "/resume",
+    name: "ResumePage",
+    component: ResumePage,
+  },
   {
     path: "/pictures",
     name: "PicturesPage",
@@ -34,31 +34,14 @@ export const routes: Array<RouteRecordRaw> = [
     name: "VideosPage",
     component: VideosPage,
   },
-  // {
-  //   path: "/projects",
-  //   name: "ProjectsPage",
-  //   meta: {
-  //     title: "Projects",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/ProjectsPage.vue"),
-  // },
-  // {
-  //   path: "/blog",
-  //   name: "Blog",
-  //   meta: {
-  //     title: "Blog",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/BlogPage.vue"),
-  // },
-  // {
-  //   path: "/Code",
-  //   name: "CodePage",
-  //   meta: {
-  //     title: "Code",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/CodePage.vue"),
-  // },
+  {
+    path: "/projects",
+    name: "ProjectsPage",
+    component: ProjectsPage,
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: BlogPage,
+  },
 ];
