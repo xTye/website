@@ -1,76 +1,47 @@
 import { RouteRecordRaw } from "vue-router";
+import HomePage from "@/views/HomePage.vue";
+import AboutPage from "@/views/AboutPage.vue";
+import ResumePage from "@/views/ResumePage.vue";
+import PicturesPage from "@/views/PicturesPage.vue";
+import VideosPage from "@/views/VideosPage.vue";
+import ProjectsPage from "@/views/ProjectsPage.vue";
+import BlogPage from "@/views/BlogPage.vue";
+import CodePage from "@/views/CodePage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "HomePage",
-    meta: {
-      title: "Home",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/HomePage.vue"),
+    component: HomePage,
   },
   {
     path: "/about",
     name: "AboutPage",
-    meta: {
-      title: "About",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutPage.vue"),
+    component: AboutPage,
   },
-  // {
-  //   path: "/resume",
-  //   name: "ResumePage",
-  //   meta: {
-  //     title: "Resume",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/ResumePage.vue"),
-  // },
+  {
+    path: "/resume",
+    name: "ResumePage",
+    component: ResumePage,
+  },
   {
     path: "/pictures",
     name: "PicturesPage",
-    meta: {
-      title: "Pictures",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/PicturesPage.vue"),
+    component: PicturesPage,
   },
   {
     path: "/videos",
     name: "VideosPage",
-    meta: {
-      title: "Videos",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/VideosPage.vue"),
+    component: VideosPage,
   },
-  // {
-  //   path: "/projects",
-  //   name: "ProjectsPage",
-  //   meta: {
-  //     title: "Projects",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/ProjectsPage.vue"),
-  // },
-  // {
-  //   path: "/blog",
-  //   name: "Blog",
-  //   meta: {
-  //     title: "Blog",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/BlogPage.vue"),
-  // },
-  // {
-  //   path: "/Code",
-  //   name: "CodePage",
-  //   meta: {
-  //     title: "Code",
-  //   },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/CodePage.vue"),
-  // },
+  {
+    path: "/projects",
+    name: "ProjectsPage",
+    component: ProjectsPage,
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: BlogPage,
+  },
 ];
