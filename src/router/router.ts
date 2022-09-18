@@ -1,23 +1,19 @@
 import { RouteRecordRaw } from "vue-router";
+import HomePage from "@/views/HomePage.vue";
+import AboutPage from "@/views/AboutPage.vue";
+import PicturesPage from "@/views/PicturesPage.vue";
+import VideosPage from "@/views/VideosPage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "HomePage",
-    meta: {
-      title: "Home",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/HomePage.vue"),
+    component: HomePage,
   },
   {
     path: "/about",
     name: "AboutPage",
-    meta: {
-      title: "About",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutPage.vue"),
+    component: AboutPage,
   },
   // {
   //   path: "/resume",
@@ -31,20 +27,12 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/pictures",
     name: "PicturesPage",
-    meta: {
-      title: "Pictures",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/PicturesPage.vue"),
+    component: PicturesPage,
   },
   {
     path: "/videos",
     name: "VideosPage",
-    meta: {
-      title: "Videos",
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/VideosPage.vue"),
+    component: VideosPage,
   },
   // {
   //   path: "/projects",
