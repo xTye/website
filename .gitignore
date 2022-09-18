@@ -2,16 +2,9 @@
 node_modules
 /dist
 
-<<<<<<< HEAD
 .firebase
 .firebaserc
 .github
-=======
-.firebaserc
-.firebase
-
-
->>>>>>> 032c0e33e684df0280dd5dae2995c498aaacf30e
 
 # local env files
 .env.local
