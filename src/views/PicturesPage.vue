@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col pb-5 bg-black">
+  <div class="flex flex-col pb-5 min-h-screen bg-black">
     <NavigationBar />
     <div class="flex justify-center items-center">
       <div class="grid gap-4 grid-cols-3">

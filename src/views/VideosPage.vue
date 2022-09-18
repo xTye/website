@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col pb-5 bg-black">
+  <div class="flex flex-col pb-5 min-h-screen bg-black">
     <NavigationBar />
     <div class="flex justify-center items-center w-full h-full px-20">
       <video-player
