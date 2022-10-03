@@ -59,9 +59,7 @@ export default defineComponent({
                 always like to think outside of the box. Inventing new things is
                 what I find most exciting. Nothing bothers me more than watching
                 someone else do something and trying to replicate it. I strive
-                to impiment my own ideas and thoughts into my projects. It's
-                important to note that the style isn't always the same. My style
-                differs with my passion and preferences.
+                to impiment my own original ideas and thoughts into my projects.
               </div>
               <div class="text-center">
                 <i><b>I am passionate.</b></i>
