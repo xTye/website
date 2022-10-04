@@ -7,7 +7,7 @@ import BlogPage from "@/views/BlogPage.vue";
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "HomePage",
+    name: "Home",
     component: HomePage,
   },
   // {
@@ -17,12 +17,12 @@ export const routes: Array<RouteRecordRaw> = [
   // },
   {
     path: "/resume",
-    name: "ResumePage",
+    name: "Resume",
     component: ResumePage,
   },
   {
     path: "/media",
-    name: "MediaPage",
+    name: "Media",
     component: MediaPage,
   },
   {

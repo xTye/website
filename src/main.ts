@@ -4,16 +4,19 @@ import "./index.css";
 import { router } from "@/router/index";
 import store from "./store";
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 export const firebase = initializeApp({
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
-  measurementId: process.env.measurementId,
+  apiKey: process.env.VUE_APP_APIKEY,
+  authDomain: process.env.VUE_APP_AUTHDOMAIN,
+  projectId: process.env.VUE_APP_PROJECTID,
+  storageBucket: process.env.VUE_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.VUE_APP_MESSAGESENDERID,
+  appId: process.env.VUE_APP_APPID,
+  measurementId: process.env.VUE_APP_MEASUREMENTID,
 });
+
+export const db = getFirestore();
 
 const app = createApp(App);
 

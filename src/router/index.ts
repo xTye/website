@@ -7,3 +7,8 @@ export const router = createRouter({
   strict: true,
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.name) document.title = `${to.name.toString()} | Tye`;
+  next();
+});

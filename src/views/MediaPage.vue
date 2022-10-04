@@ -10,12 +10,12 @@ export default defineComponent({
   data() {
     return {
       videos: [
-        "./home-videos/zededit.mp4",
-        "./home-videos/squishyedit.mp4",
-        "./home-videos/alrightalmight.mp4",
-        "./home-videos/simonedit.mp4",
-        "./home-videos/qiyanaedit.mp4",
-        "./home-videos/oasis.mp4",
+        "./media-page/videos/zededit.mp4",
+        "./media-page/videos/squishyedit.mp4",
+        "./media-page/videos/alrightalmight.mp4",
+        "./media-page/videos/simonedit.mp4",
+        "./media-page/videos/qiyanaedit.mp4",
+        "./media-page/videos/oasis.mp4",
       ],
       titles: [
         "Zed Montage (2019)",
