@@ -6,7 +6,7 @@ import {
   DocumentData,
   getDocs,
   query,
-  where,
+  orderBy,
 } from "firebase/firestore";
 import NavigationBar from "../components/NavigationBar.vue";
 
@@ -31,7 +31,9 @@ export default defineComponent({
     };
   },
   async mounted() {
-    const docs = await getDocs(query(collection(db, "blogs")));
+    const docs = await getDocs(
+      query(collection(db, "blogs"), orderBy("date", "desc"))
+    );
 
     docs.forEach((doc) => {
       this.posts.push(doc.data());

@@ -10,12 +10,12 @@ export default defineComponent({
   data() {
     return {
       videos: [
-        "./media-page/videos/zededit.mp4",
-        "./media-page/videos/squishyedit.mp4",
-        "./media-page/videos/alrightalmight.mp4",
-        "./media-page/videos/simonedit.mp4",
-        "./media-page/videos/qiyanaedit.mp4",
-        "./media-page/videos/oasis.mp4",
+        "/media-page/videos/zededit.mp4",
+        "/media-page/videos/squishyedit.mp4",
+        "/media-page/videos/alrightalmight.mp4",
+        "/media-page/videos/simonedit.mp4",
+        "/media-page/videos/qiyanaedit.mp4",
+        "/media-page/videos/oasis.mp4",
       ],
       titles: [
         "Zed Montage (2019)",
@@ -55,7 +55,7 @@ export default defineComponent({
     <div
       v-for="(vid, i) in videos"
       :key="i"
-      class="rounded-xl drop-shadow-md overflow-hidden"
+      class="hidden md:block relative rounded-xl drop-shadow-md overflow-hidden"
     >
       <div
         class="absolute flex flex-col justify-center items-center w-full h-full z-10 text-white text-opacity-0 hover:bg-black hover:opacity-90 hover:text-opacity-100"
@@ -68,6 +68,7 @@ export default defineComponent({
         loop
         muted
         disablePictureInPicture
+        disablePopup
         :class="currentVideo === i ? '' : 'hidden'"
         class="-my-1/10"
       >

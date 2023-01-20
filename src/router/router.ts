@@ -3,6 +3,7 @@ import HomePage from "@/views/HomePage.vue";
 import ResumePage from "@/views/ResumePage.vue";
 import MediaPage from "@/views/MediaPage.vue";
 import BlogPage from "@/views/BlogPage.vue";
+import PostPage from "@/views/PostPage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -29,5 +30,11 @@ export const routes: Array<RouteRecordRaw> = [
     path: "/blog",
     name: "Blog",
     component: BlogPage,
+  },
+
+  {
+    path: "/post",
+    name: "Post",
+    component: PostPage,
   },
 ];

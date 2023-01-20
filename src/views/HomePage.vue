@@ -16,7 +16,7 @@ export default defineComponent({
     </div>
     <NavigationBar class="fixed bg-black z-20" />
     <div
-      class="absolute opacity-95 bg-black z-10 -bottom-[600px] shadow-md rounded-md"
+      class="absolute opacity-95 bg-black z-10 top-[600px] shadow-md rounded-md"
     >
       <div class="flex flex-col items-center">
         <div class="flex flex-col w-9/10 my-20 items-start">
