@@ -11,7 +11,8 @@ export default {
   },
   data() {
     return {
-      source: "./resume.pdf",
+      sourceGame: "/resume_game.pdf",
+      sourceSoft: "/resume_soft.pdf",
       wrapper: ref<HTMLElement>(),
     };
   },
@@ -19,10 +20,15 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col items-center min-h-screen h-full bg-black">
+  <div class="flex flex-col items-center w-full min-h-screen h-full bg-black">
     <NavigationBar />
-    <div class="w-11/12 p-3" ref="wrapper">
-      <vue-pdf-embed :source="source" />
+    <div class="flex flex-col p-3 gap-4 justify-center" ref="wrapper">
+      <div class="text-white">
+        Note: Relevant links are associated with project titles and social media
+        icons.
+      </div>
+      <vue-pdf-embed class="w-full" :source="sourceGame" />
+      <vue-pdf-embed class="w-full" :source="sourceSoft" />
     </div>
   </div>
 </template>

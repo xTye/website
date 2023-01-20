@@ -1,7 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import LoginButton from "../components/LoginButton.vue";
 export default defineComponent({
   name: "NavigationBar",
+  components: {
+    LoginButton,
+  },
 });
 </script>
 
@@ -44,6 +48,7 @@ export default defineComponent({
           Blog
         </div></router-link
       >
+      <LoginButton></LoginButton>
     </div>
   </div>
 </template>
