@@ -22,7 +22,7 @@ export default {
 <template>
   <div class="flex flex-col items-center w-full min-h-screen h-full bg-black">
     <NavigationBar />
-    <div class="flex flex-col p-3 gap-4 justify-center" ref="wrapper">
+    <div class="flex flex-col w-11/12 p-3 gap-4 justify-center" ref="wrapper">
       <div class="text-white">
         Note: Relevant links are associated with project titles and social media
         icons.

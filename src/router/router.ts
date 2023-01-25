@@ -4,12 +4,18 @@ import ResumePage from "@/views/ResumePage.vue";
 import MediaPage from "@/views/MediaPage.vue";
 import BlogPage from "@/views/BlogPage.vue";
 import PostPage from "@/views/PostPage.vue";
+import AnimationsPage from "@/views/AnimationsPage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: HomePage,
+  },
+  {
+    path: "/anim",
+    name: "Animations",
+    component: AnimationsPage,
   },
   // {
   //   path: "/about",

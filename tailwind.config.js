@@ -8,6 +8,7 @@ module.exports = {
       xl: "1440px",
     },
     colors: {
+      deepBlack: "#000000",
       black: "#212121",
       black2: "#303030",
       white: "#ffffff",
@@ -17,6 +18,11 @@ module.exports = {
       green2: "#53ad82",
       blue: "#39adb8",
       purple: "#7b39b8",
+      gradientBaby1: "#FFD6FF",
+      gradientBaby2: "#E7C6FF",
+      gradientBaby3: "#C8B6FF",
+      gradientBaby4: "#B8C0FF",
+      gradientBaby5: "#BBD0FF",
     },
     fontFamily: {
       sans: ["Calibri", "sans-serif"],

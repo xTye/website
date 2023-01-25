@@ -1,0 +1,9 @@
+const particlesGeometry = new THREE.BufferGeometry(); const particlesCnt =
+50000; const posArray = new Float32Array(particlesCnt * 3); for (let i = 0; i <
+particlesCnt * 3; i++) posArray[i] = (Math.random() - 0.5) * 10;
+particlesGeometry.setAttribute( "position", new THREE.BufferAttribute(posArray,
+3) ); const particlesMesh = new THREE.Points( particlesGeometry, planeMaterial
+// new THREE.PointsMaterial({ // size: 0.01, // map: triangle, // transparent:
+true, // //color: "#262626", // }) );
+
+
