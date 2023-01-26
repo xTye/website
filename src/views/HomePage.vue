@@ -42,7 +42,7 @@ export default defineComponent({
     // });
 
     let headerDiv = this.$refs.header as unknown as HTMLDivElement;
-    let navbarDiv = this.$refs.navbar as any;
+    let navbarDiv = this.$refs.navbar as unknown as HTMLDivElement;
     document.addEventListener("wheel", (e) => {
       scrollForce += e.deltaY;
       scrollTotal += e.deltaY;
