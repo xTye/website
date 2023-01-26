@@ -5,6 +5,7 @@ import {
   signInWithRedirect,
   getAuth,
   getRedirectResult,
+  signOut,
 } from "firebase/auth";
 
 export default defineComponent({
@@ -13,10 +14,12 @@ export default defineComponent({
   data() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
+    const loggedIn = false;
 
     return {
       auth,
       provider,
+      loggedIn,
     };
   },
   async mounted() {
@@ -27,7 +30,8 @@ export default defineComponent({
         // This gives you a Google Access Token. You can use it to access Google APIs.
         const credential = GoogleAuthProvider.credentialFromResult(result);
 
-        if (!credential) return;
+        if (credential) this.loggedIn = true;
+        else return;
 
         const token = credential.accessToken;
         const user = result.user;
@@ -44,16 +48,28 @@ export default defineComponent({
     async login() {
       signInWithRedirect(this.auth, this.provider);
     },
+    async so() {
+      signOut(this.auth).then(() => {
+        this.loggedIn = false;
+      });
+    },
   },
 });
 </script>
 
 <template>
-  <button @click="login" class="duration-0 hover:transition duration-300">
+  <button
+    @click="
+      () => {
+        loggedIn ? so() : login();
+      }
+    "
+    class="duration-0 hover:transition duration-300"
+  >
     <div
       class="text-center p-2 w-20 h-auto hover:border-b-2 hover:bg-black hover:bg-opacity-50 transition duration-200"
     >
-      Login
+      {{ loggedIn ? `Sign Out` : `Login` }}
     </div>
   </button>
 </template>

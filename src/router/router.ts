@@ -12,11 +12,11 @@ export const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: HomePage,
   },
-  {
-    path: "/anim",
-    name: "Animations",
-    component: AnimationsPage,
-  },
+  // {
+  //   path: "/anim",
+  //   name: "Animations",
+  //   component: AnimationsPage,
+  // },
   // {
   //   path: "/about",
   //   name: "AboutPage",

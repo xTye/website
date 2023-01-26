@@ -14,7 +14,7 @@ export const particles = (scene: THREE.Scene): THREE.Group => {
 
   const group = new THREE.Group();
 
-  const particlesCount = 1000;
+  const particlesCount = 200;
   for (let i = 0; i < particlesCount; i++) {
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.scale.set(0.05, 0.05, 0.05);
