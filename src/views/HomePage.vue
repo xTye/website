@@ -117,11 +117,11 @@ export default defineComponent({
         >
           <div class="font-bold">Hey I'm Tye and I'm a</div>
           <div
-            class="flex flex-col justify-center gap-6 h-full text-5xl font-roboto font-bold custom-translate-left"
+            class="flex flex-col justify-center gap-6 h-full text-4xl font-roboto font-bold custom-translate-left"
           >
-            <div>Programmer.</div>
-            <div>Artist.</div>
-            <div>Gamer.</div>
+            <div>Software Engineer.</div>
+            <div>Game Developer.</div>
+            <div>Embedded Systems Engineer.</div>
           </div>
         </div>
       </div>
@@ -227,7 +227,7 @@ export default defineComponent({
 <style scoped>
 .custom-translate-left {
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  animation: custom-translate-left-keyframes 1s ease-out;
+  animation: custom-translate-left-keyframes 3s;
   animation-delay: 1s;
 
   -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */

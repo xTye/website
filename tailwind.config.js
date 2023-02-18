@@ -27,7 +27,8 @@ module.exports = {
     fontFamily: {
       sans: ["Calibri", "sans-serif"],
       serif: ["Calibri", "serif"],
-      roboto: ["Roboto Mono", "serif"],
+      roboto: ["Roboto", "serif"],
+      noto: ["Noto Sans", "serif"],
     },
     extend: {
       backgroundImage: {

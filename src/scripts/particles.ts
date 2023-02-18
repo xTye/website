@@ -14,10 +14,10 @@ export const particles = (scene: THREE.Scene): THREE.Group => {
 
   const group = new THREE.Group();
 
-  const particlesCount = 200;
+  const particlesCount = 100;
   for (let i = 0; i < particlesCount; i++) {
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.scale.set(0.05, 0.05, 0.05);
+    plane.scale.set(0.1, 0.1, 0.1);
     const x = (Math.random() - 0.5) * 10;
     const y = (Math.random() - 0.5) * 10;
     const z = (Math.random() - 0.5) * 10;
