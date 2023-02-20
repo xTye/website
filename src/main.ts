@@ -6,6 +6,8 @@ import { router } from "@/router/index";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+export const TYE_UID = process.env.VUE_APP_TYEUID;
+
 export const firebase = initializeApp({
   apiKey: process.env.VUE_APP_APIKEY,
   authDomain: process.env.VUE_APP_AUTHDOMAIN,

@@ -50,7 +50,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-col pb-5 min-h-screen bg-black overscroll-none">
+  <div class="flex flex-col pb-5 min-h-screen bg-deepBlack overscroll-none">
     <NavigationBar />
     <div
       v-for="(vid, i) in videos"

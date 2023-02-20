@@ -115,12 +115,12 @@ export default defineComponent({
         <div
           class="flex flex-col justify-center text-sm text-black font-roboto"
         >
-          <div class="font-bold">Hey I'm Tye and I'm a</div>
+          <div class="">Hey I'm Tye and I'm a</div>
           <div
-            class="flex flex-col justify-center gap-6 h-full text-4xl font-roboto font-bold custom-translate-left"
+            class="flex flex-col justify-center gap-4 h-full text-4xl font-roboto custom-translate-left"
           >
-            <div>Software Engineer.</div>
-            <div>Game Developer.</div>
+            <div>Software Engineer</div>
+            <div>Game Developer</div>
             <div>Embedded Systems Engineer.</div>
           </div>
         </div>

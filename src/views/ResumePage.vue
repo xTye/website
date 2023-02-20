@@ -66,10 +66,11 @@ export default {
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
-                  <img
-                    class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
-                    src="/icons/linkedin2.png"
-                  />
+                  <a href="https://www.linkedin.com/in/xtye/" target="_blank"
+                    ><img
+                      class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
+                      src="/icons/linkedin2.png"
+                  /></a>
                   <div class="text-xs">LinkedIn</div>
                 </div>
                 <div class="pl-4 text-xs">/in/xtye</div>
@@ -78,10 +79,12 @@ export default {
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
-                  <img
-                    class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
-                    src="/icons/github2.png"
-                  />
+                  <a href="https://www.github.com/xtye" target="_blank">
+                    <img
+                      class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
+                      src="/icons/github2.png"
+                    />
+                  </a>
                   <div class="text-xs">GitHub</div>
                 </div>
                 <div class="pl-4 text-xs">/xtye</div>
@@ -92,10 +95,12 @@ export default {
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
-                  <img
-                    class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
-                    src="/icons/insta2.png"
-                  />
+                  <a href="https://www.instagram.com/tyleriley" target="_blank"
+                    ><img
+                      class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
+                      src="/icons/insta2.png"
+                  /></a>
+
                   <div class="text-xs">Instagram</div>
                 </div>
                 <div class="pl-4 text-xs">@tyleriley</div>
@@ -104,10 +109,13 @@ export default {
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
-                  <img
-                    class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
-                    src="/icons/youtube2.png"
-                  />
+                  <a href="https://www.youtube.com/@xtye" target="_blank">
+                    <img
+                      class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
+                      src="/icons/youtube2.png"
+                    />
+                  </a>
+
                   <div class="text-xs">YouTube</div>
                 </div>
                 <div class="pl-4 text-xs">Tye</div>
@@ -118,10 +126,12 @@ export default {
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
-                  <img
-                    class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
-                    src="/icons/www2.png"
-                  />
+                  <a href="https://www.xtye.me/" target="_blank">
+                    <img
+                      class="bg-gradient-to-r from-blue to-green hover:animate-pulse rounded-full w-8 h-8"
+                      src="/icons/www2.png"
+                    />
+                  </a>
                   <div class="text-xs">Website</div>
                 </div>
                 <div class="pl-4 text-xs">https://xtye.me</div>
@@ -134,7 +144,9 @@ export default {
       <div class="flex flex-col gap-1 text-white">
         <div class="font-noto font-bold">RELEVANT SKILLS</div>
         <div class="border-t border-green w-full"></div>
-        <div class="flex justify-between items-center font-roboto py-1 text-sm">
+        <div
+          class="flex justify-between items-center font-roboto py-1 text-sm text-center"
+        >
           <div
             class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
           >
@@ -166,7 +178,9 @@ export default {
             HTML5 | CSS3 | JavaScript
           </div>
         </div>
-        <div class="flex justify-between items-center font-roboto py-1 text-sm">
+        <div
+          class="flex justify-between items-center font-roboto py-1 text-sm text-center"
+        >
           <div
             class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
           >
@@ -277,8 +291,22 @@ export default {
         <div class="border-t border-green w-full"></div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">
-              Exhibit Marker Uniform Resource Router (EMURR) [web /pi]
+            <div class="flex font-bold">
+              <div>Exhibit Marker Uniform Resource Router (EMURR) [</div>
+              <a
+                href="https://github.com/emurr-ucf/emurr"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >web</a
+              >
+              <div>/</div>
+              <a
+                href="https://github.com/emurr-ucf/rpi"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >pi</a
+              >
+              <div>]</div>
             </div>
             <div>TypeScript | NextJS | Prisma | MySQL</div>
           </div>
@@ -315,7 +343,23 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Hand Brain Chess [frontend/backend]</div>
+            <div class="flex font-bold">
+              <div>Hand Brain Chess [</div>
+              <a
+                href="https://github.com/jonathanhuydieu/hbchess-frontend"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >frontend</a
+              >
+              <div>/</div>
+              <a
+                href="https://github.com/jonathanhuydieu/hbchess-backend"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >backend</a
+              >
+              <div>]</div>
+            </div>
             <div>TypeScript | ReactJS | ExpressJS | Mongoose | MongoDB</div>
           </div>
         </div>
@@ -344,8 +388,22 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">
-              Student Event Manager [frontend/backend]
+            <div class="flex font-bold">
+              <div>Student Event Manager [</div>
+              <a
+                href="https://github.com/xTye/StudentEventManager"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >frontend</a
+              >
+              <div>/</div>
+              <a
+                href="https://github.com/xTye/StudentEventMangerBackend"
+                target="_blank"
+                class="text-green hover:text-blue"
+                >backend</a
+              >
+              <div>]</div>
             </div>
             <div>
               TypeScript | JavaScript | VueJS | ExpressJS | Sequelize | MySQL
@@ -379,7 +437,9 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Flee</div>
+            <a href="https://github.com/xTye/flee" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">Flee</div></a
+            >
             <div>TypeScript | SolidJS | Firebase</div>
           </div>
         </div>
@@ -407,7 +467,11 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Personal Website</div>
+            <a href="https://github.com/xTye/website" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                Personal Website
+              </div></a
+            >
             <div>TypeScript | VueJS | ThreeJS | Firebase</div>
           </div>
         </div>
@@ -436,7 +500,13 @@ export default {
         <div class="border-t border-green w-full"></div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Bitterblossom</div>
+            <a
+              href="https://drive.google.com/file/d/1MzI2R6CvBrordYyU3HIVR0rLx4qVWb-W/view"
+              target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                Bitterblossom
+              </div></a
+            >
             <div>Unity Game Engine | C# | Blender</div>
           </div>
         </div>
@@ -483,7 +553,11 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Sunflower Chess</div>
+            <a href="https://xtye.itch.io/sunflower-chess" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                Sunflower Chess
+              </div></a
+            >
             <div>Lua | Playdate SDK</div>
           </div>
         </div>
@@ -509,7 +583,13 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Discord and Dragons</div>
+            <a
+              href="https://github.com/xTye/discord-and-dragons"
+              target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                Discord and Dragons
+              </div></a
+            >
             <div>TypeScript | DiscordJS</div>
           </div>
         </div>
@@ -531,7 +611,11 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">5 More Minutes</div>
+            <a href="https://jacksonwebb.itch.io/5-more-minutes" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                5 More Minutes
+              </div></a
+            >
             <div>Lua | Playdate SDK</div>
           </div>
         </div>
@@ -584,9 +668,11 @@ export default {
         <div class="border-t border-green w-full"></div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">
-              Traveling Salesman Problem — Approximation
-            </div>
+            <a href="https://github.com/xTye/tsp" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">
+                Traveling Salesman Problem — Approximation
+              </div></a
+            >
             <div>Python</div>
           </div>
         </div>
@@ -605,7 +691,9 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="font-bold">Kernel</div>
+            <a href="https://github.com/xTye/Kernel" target="_blank"
+              ><div class="font-bold text-green hover:text-blue">Kernel</div></a
+            >
             <div>C++</div>
           </div>
         </div>

@@ -5,8 +5,12 @@ import {
   signInWithRedirect,
   getAuth,
   getRedirectResult,
+  setPersistence,
+  browserLocalPersistence,
   signOut,
 } from "firebase/auth";
+import { useAuthStore } from "../store";
+import { TYE_UID } from "../main";
 
 export default defineComponent({
   name: "LoginButton",
@@ -14,12 +18,12 @@ export default defineComponent({
   data() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
-    const loggedIn = false;
+    const authStore = useAuthStore();
 
     return {
       auth,
       provider,
-      loggedIn,
+      authStore,
     };
   },
   async mounted() {
@@ -27,30 +31,25 @@ export default defineComponent({
       .then((result) => {
         if (!result) return;
 
-        // This gives you a Google Access Token. You can use it to access Google APIs.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-
-        if (credential) this.loggedIn = true;
-        else return;
-
-        const token = credential.accessToken;
-        const user = result.user;
+        this.authStore.set({
+          loggedIn: true,
+          admin: result.user.uid === TYE_UID,
+        });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(error);
       });
   },
 
   methods: {
     async login() {
+      await setPersistence(this.auth, browserLocalPersistence);
+
       signInWithRedirect(this.auth, this.provider);
     },
     async so() {
       signOut(this.auth).then(() => {
-        this.loggedIn = false;
+        this.authStore.$reset();
       });
     },
   },
@@ -61,7 +60,7 @@ export default defineComponent({
   <button
     @click="
       () => {
-        loggedIn ? so() : login();
+        authStore.loggedIn ? so() : login();
       }
     "
     class="duration-0 hover:transition duration-300"
@@ -69,7 +68,7 @@ export default defineComponent({
     <div
       class="text-center p-2 w-20 h-auto hover:border-b-2 hover:bg-black hover:bg-opacity-50 transition duration-200"
     >
-      {{ loggedIn ? `Sign Out` : `Login` }}
+      {{ authStore.loggedIn ? `Sign Out` : `Login` }}
     </div>
   </button>
 </template>

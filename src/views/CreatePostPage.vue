@@ -1,13 +1,17 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { ref, defineComponent, Ref } from "vue";
 import { db } from "@/main";
 import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import NavigationBar from "../components/NavigationBar.vue";
+import TiptapComponent from "../components/TiptapComponent.vue";
+import { useAuthStore } from "@/store";
+import { Editor } from "@tiptap/vue-3";
 
 export default defineComponent({
-  name: "PostPage",
+  name: "CreatePostPage",
   components: {
     NavigationBar,
+    TiptapComponent,
   },
   data() {
     let error = "";
@@ -15,13 +19,16 @@ export default defineComponent({
     let image = "";
     let description = "";
     let embed = "";
+    let editor: Ref<Editor | null> = ref(null);
 
     return {
+      authStore: useAuthStore(),
       error,
       title,
       image,
       description,
       embed,
+      editor,
       parseDate: (date: string) => {
         let parse = date.split(" ");
 
@@ -35,22 +42,28 @@ export default defineComponent({
 
   methods: {
     async submit() {
-      setDoc(doc(collection(db, "blogs")), {
-        title: this.title,
-        image: this.image,
-        description: this.description,
-        embed: this.embed,
-        date: Timestamp.fromDate(new Date()),
-      }).catch((err) => {
-        this.error = err;
-      });
+      this.description = this.editor?.getHTML() || "";
+
+      try {
+        await setDoc(doc(collection(db, "blogs")), {
+          title: this.title,
+          image: this.image,
+          description: this.description,
+          embed: this.embed,
+          date: Timestamp.fromDate(new Date()),
+        });
+
+        this.$router.push(`/blog`);
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 });
 </script>
 
 <template>
-  <div class="flex flex-col items-center min-h-screen pb-5 bg-black">
+  <div class="flex flex-col items-center min-h-screen pb-5 bg-deepBlack">
     <NavigationBar />
     <div
       class="flex flex-col justify-center items-center w-full h-full lg:w-4/5 text-white"
@@ -79,10 +92,7 @@ export default defineComponent({
         </div>
         <div>
           <div class="text-xl font-bold">Description</div>
-          <textarea
-            class="w-full h-48 text-lg p-2 text-black"
-            v-model="description"
-          />
+          <TiptapComponent :setEditor="(_editor: Editor) => editor = _editor" />
         </div>
         <div>
           <div class="text-xl font-bold">Embed</div>

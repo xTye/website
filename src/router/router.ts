@@ -3,8 +3,9 @@ import HomePage from "@/views/HomePage.vue";
 import ResumePage from "@/views/ResumePage.vue";
 import MediaPage from "@/views/MediaPage.vue";
 import BlogPage from "@/views/BlogPage.vue";
-import PostPage from "@/views/PostPage.vue";
-import AnimationsPage from "@/views/AnimationsPage.vue";
+import BlogPostPage from "@/views/BlogPostPage.vue";
+import CreatePostPage from "@/views/CreatePostPage.vue";
+import UpdatePostPage from "@/views/UpdatePostPage.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -37,10 +38,20 @@ export const routes: Array<RouteRecordRaw> = [
     name: "Blog",
     component: BlogPage,
   },
+  {
+    path: "/blog/:id",
+    name: "Blog Post",
+    component: BlogPostPage,
+  },
 
   {
     path: "/post",
-    name: "Post",
-    component: PostPage,
+    name: "Create Post",
+    component: CreatePostPage,
+  },
+  {
+    path: "/post/:id",
+    name: "Update Post",
+    component: UpdatePostPage,
   },
 ];

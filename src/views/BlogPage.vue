@@ -9,6 +9,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 import NavigationBar from "../components/NavigationBar.vue";
+import { useAuthStore } from "@/store";
 
 export default defineComponent({
   name: "BlogPage",
@@ -16,9 +17,10 @@ export default defineComponent({
     NavigationBar,
   },
   data() {
-    let posts: DocumentData[] = [];
+    let posts: Map<string, DocumentData> = new Map<string, DocumentData>();
 
     return {
+      authStore: useAuthStore(),
       posts,
       parseDate: (date: string) => {
         let parse = date.split(" ");
@@ -36,45 +38,42 @@ export default defineComponent({
     );
 
     docs.forEach((doc) => {
-      this.posts.push(doc.data());
+      this.posts.set(doc.id, doc.data());
     });
   },
 });
 </script>
 
 <template>
-  <div class="flex flex-col items-center min-h-screen pb-5 bg-black">
+  <div class="flex flex-col items-center min-h-screen pb-5 bg-deepBlack">
     <NavigationBar />
     <div
-      class="flex flex-col justify-center items-center w-full h-full lg:w-4/5 text-white"
+      v-if="authStore.admin"
+      class="flex justify-end p-2 w-full h-full lg:w-4/5 text-white"
     >
-      <div
-        v-for="(post, i) in posts"
-        :key="i"
-        :class="i % 2 == 0 ? 'bg-black2' : ''"
-        class="flex flex-col w-full p-4 mb-20 border-b-2 border-b-blue rounded-md shadow-lg"
+      <router-link
+        :to="`/post`"
+        class="bg-gradient-to-r from-blue to-green p-2 rounded-md hover:animate-pulse"
+        >Create Post</router-link
       >
-        <div class="flex justify-between pb-4">
-          <div class="text-3xl border-b-2 border-b-green">
+    </div>
+    <div class="grid grid-cols-3 gap-4 w-full h-full lg:w-4/5 text-white">
+      <router-link
+        v-for="([id, post], i) in posts"
+        :key="id"
+        :to="`/blog/${id}`"
+        class="flex flex-col bg-gradient-to-r from-blue to-green transition-all hover:scale-105 h-72 hover:cursor-pointer w-full shadow-lg"
+      >
+        <img class="object-cover w-full h-32" :src="post.image" />
+        <div class="flex flex-col justify-between p-4 select-none">
+          <div class="text-black font-bold h-full text-4xl">
             {{ post.title }}
           </div>
-          <div class="text-md">
+          <div class="text-black font-bold">
             {{ parseDate(post.date.toDate().toString()) }}
           </div>
         </div>
-        <div>
-          <img
-            :src="post.image"
-            class="object-cover w-52 h-52 m-4 float-right"
-          />
-          <div class="text-lg text-justify">
-            {{ post.description }}
-          </div>
-        </div>
-        <div class="flex justify-center items-center my-2">
-          <div class="w-1/2" v-html="post.embed"></div>
-        </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
