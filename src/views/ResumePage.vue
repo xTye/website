@@ -23,21 +23,30 @@ export default {
     class="flex flex-col items-center w-full min-h-screen h-full bg-deepBlack"
   >
     <NavigationBar />
-    <div class="flex flex-col w-11/12 p-3 gap-4 justify-center" ref="wrapper">
+    <div
+      class="flex flex-col w-full md:w-11/12 gap-4 justify-center"
+      ref="wrapper"
+    >
       <div class="bg-gradient-to-r from-blue to-green h-4"></div>
-      <div class="flex items-center gap-4 text-white font-noto">
-        <div class="flex flex-col items-end w-[45%] gap-3">
-          <div class="text-5xl">Robert "Tye" Riley</div>
-          <div class="flex flex-col items-end">
-            <div class="text-md">Software Engineer | Game Developer |</div>
-            <div class="text-md">Embedded Systems Engineer</div>
+      <div
+        class="flex flex-col md:flex-row items-center gap-4 text-white font-noto"
+      >
+        <div class="flex flex-col text-right md:items-end md:w-[45%] gap-3">
+          <div class="text-4xl lg:text-5xl">Robert "Tye" Riley</div>
+          <div class="flex flex-col items-end text-xs lg:text-base">
+            <div>Software Engineer | Game Developer |</div>
+            <div>Embedded Systems Engineer</div>
           </div>
         </div>
-        <div class="border border-l border-green h-24"></div>
+        <div
+          class="invisible border border-l border-green w-24 md:w-0 md:h-24 md:visible"
+        ></div>
         <!-- Wrapper around socials -->
-        <div class="flex justify-between w-[65%]">
-          <div class="flex flex-col gap-3 w-[20%]">
-            <div class="flex flex-col gap-3">
+        <div
+          class="flex flex-col md:flex-row justify-between w-9/12 md:w-[65%]"
+        >
+          <div class="flex p-2 md:p-0 md:flex-col gap-3 md:w-[20%]">
+            <div class="flex flex-col gap-3 w-28">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
                   <img
@@ -62,8 +71,8 @@ export default {
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-3 w-[20%]">
-            <div class="flex flex-col gap-3">
+          <div class="flex p-2 md:p-0 md:flex-col gap-3 md:w-[20%]">
+            <div class="flex flex-col gap-3 w-28">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
                   <a href="https://www.linkedin.com/in/xtye/" target="_blank"
@@ -91,8 +100,8 @@ export default {
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-3 w-[20%]">
-            <div class="flex flex-col gap-3">
+          <div class="flex p-2 md:p-0 md:flex-col gap-3 md:w-[20%]">
+            <div class="flex flex-col gap-3 w-28">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
                   <a href="https://www.instagram.com/tyleriley" target="_blank"
@@ -122,7 +131,7 @@ export default {
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-3 w-[20%]">
+          <div class="flex p-2 md:p-0 md:flex-col gap-3">
             <div class="flex flex-col gap-3">
               <div class="flex flex-col gap-1">
                 <div class="flex gap-2 items-center">
@@ -144,84 +153,89 @@ export default {
       <div class="flex flex-col gap-1 text-white">
         <div class="font-noto font-bold">RELEVANT SKILLS</div>
         <div class="border-t border-green w-full"></div>
-        <div
-          class="flex justify-between items-center font-roboto py-1 text-sm text-center"
-        >
+        <div class="flex md:flex-col text-sm md:text-xs lg:text-sm text-center">
           <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            class="flex flex-col md:flex-row gap-1 md:justify-between md:items-center w-[50%] md:w-[auto] font-roboto py-1"
           >
-            ReactJS | NextJS | VueJS
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              ReactJS | NextJS | VueJS
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              ExpressJS | PHP | Mongoose
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Linux | Windows | Mac
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              C | C++ | C#
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Xamarin
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              HTML5 | CSS3 | JavaScript
+            </div>
           </div>
           <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            class="flex flex-col md:flex-row gap-1 md:justify-between md:items-center w-[50%] md:w-[auto] font-roboto py-1"
           >
-            ExpressJS | PHP | Mongoose
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Linux | Windows | Mac
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            C | C++ | C#
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Xamarin
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            HTML5 | CSS3 | JavaScript
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Bash | Shell
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Unity Game Engine
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Docker | Git
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Python | Anaconda | R
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              MySQL | NoSQL
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Java | Swift
+            </div>
+            <div
+              class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
+            >
+              Ruby | Ruby on Rails
+            </div>
           </div>
         </div>
-        <div
-          class="flex justify-between items-center font-roboto py-1 text-sm text-center"
-        >
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Bash | Shell
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Unity Game Engine
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Docker | Git
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Python | Anaconda | R
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            MySQL | NoSQL
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Java | Swift
-          </div>
-          <div
-            class="flex items-center justify-center border border-green2 rounded-full px-6 py-1"
-          >
-            Ruby | Ruby on Rails
-          </div>
-        </div>
-        <div class="flex items-center font-roboto py-1">
+
+        <div class="flex font-roboto py-1 gap-1">
           <div class="w-1/2">
             • Proficient with Microsoft Office and Adobe Creative Suite
           </div>
-          <div>• Certified Associate in Mechanical Design (SolidWorks)</div>
+          <div class="w-1/2">
+            • Certified Associate in Mechanical Design (SolidWorks)
+          </div>
         </div>
       </div>
 
@@ -291,24 +305,29 @@ export default {
         <div class="border-t border-green w-full"></div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="flex font-bold">
-              <div>Exhibit Marker Uniform Resource Router (EMURR) [</div>
-              <a
-                href="https://github.com/emurr-ucf/emurr"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >web</a
-              >
-              <div>/</div>
-              <a
-                href="https://github.com/emurr-ucf/rpi"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >pi</a
-              >
-              <div>]</div>
+            <div class="flex flex-col md:flex-row md:gap-1 font-bold">
+              <div>Exhibit Marker Uniform Resource Router (EMURR)</div>
+              <div class="flex">
+                <div>[</div>
+                <a
+                  href="https://github.com/emurr-ucf/emurr"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >web</a
+                >
+                <div>/</div>
+                <a
+                  href="https://github.com/emurr-ucf/rpi"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >pi</a
+                >
+                <div>]</div>
+              </div>
             </div>
-            <div>TypeScript | NextJS | Prisma | MySQL</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              TypeScript | NextJS | Prisma | MySQL
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -343,24 +362,29 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="flex font-bold">
-              <div>Hand Brain Chess [</div>
-              <a
-                href="https://github.com/jonathanhuydieu/hbchess-frontend"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >frontend</a
-              >
-              <div>/</div>
-              <a
-                href="https://github.com/jonathanhuydieu/hbchess-backend"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >backend</a
-              >
-              <div>]</div>
+            <div class="flex flex-col md:flex-row md:gap-1 font-bold">
+              <div>Hand Brain Chess</div>
+              <div class="flex">
+                <div>[</div>
+                <a
+                  href="https://github.com/jonathanhuydieu/hbchess-frontend"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >frontend</a
+                >
+                <div>/</div>
+                <a
+                  href="https://github.com/jonathanhuydieu/hbchess-backend"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >backend</a
+                >
+                <div>]</div>
+              </div>
             </div>
-            <div>TypeScript | ReactJS | ExpressJS | Mongoose | MongoDB</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              TypeScript | ReactJS | ExpressJS | Mongoose | MongoDB
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -388,24 +412,27 @@ export default {
         </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center">
-            <div class="flex font-bold">
-              <div>Student Event Manager [</div>
-              <a
-                href="https://github.com/xTye/StudentEventManager"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >frontend</a
-              >
-              <div>/</div>
-              <a
-                href="https://github.com/xTye/StudentEventMangerBackend"
-                target="_blank"
-                class="text-green hover:text-blue"
-                >backend</a
-              >
-              <div>]</div>
+            <div class="flex flex-col md:flex-row md:gap-1 font-bold">
+              <div>Student Event Manager</div>
+              <div class="flex">
+                <div>[</div>
+                <a
+                  href="https://github.com/xTye/StudentEventManager"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >frontend</a
+                >
+                <div>/</div>
+                <a
+                  href="https://github.com/xTye/StudentEventMangerBackend"
+                  target="_blank"
+                  class="text-green hover:text-blue"
+                  >backend</a
+                >
+                <div>]</div>
+              </div>
             </div>
-            <div>
+            <div class="text-right w-1/2 md:w-[auto]">
               TypeScript | JavaScript | VueJS | ExpressJS | Sequelize | MySQL
             </div>
           </div>
@@ -472,7 +499,9 @@ export default {
                 Personal Website
               </div></a
             >
-            <div>TypeScript | VueJS | ThreeJS | Firebase</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              TypeScript | VueJS | ThreeJS | Firebase
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -507,7 +536,9 @@ export default {
                 Bitterblossom
               </div></a
             >
-            <div>Unity Game Engine | C# | Blender</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              Unity Game Engine | C# | Blender
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -558,7 +589,7 @@ export default {
                 Sunflower Chess
               </div></a
             >
-            <div>Lua | Playdate SDK</div>
+            <div class="text-right w-1/2 md:w-[auto]">Lua | Playdate SDK</div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -590,7 +621,9 @@ export default {
                 Discord and Dragons
               </div></a
             >
-            <div>TypeScript | DiscordJS</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              TypeScript | DiscordJS
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -634,7 +667,9 @@ export default {
             <div class="font-bold">
               Mechatronic Musical Instrument: Performance Feedback (MMIPF)
             </div>
-            <div>Unity Game Engine | C# | Wwise</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              Unity Game Engine | C# | Wwise
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -673,7 +708,7 @@ export default {
                 Traveling Salesman Problem — Approximation
               </div></a
             >
-            <div>Python</div>
+            <div class="text-right w-1/2 md:w-[auto]">Python</div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -694,7 +729,7 @@ export default {
             <a href="https://github.com/xTye/Kernel" target="_blank"
               ><div class="font-bold text-green hover:text-blue">Kernel</div></a
             >
-            <div>C++</div>
+            <div class="text-right w-1/2 md:w-[auto]">C++</div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -716,7 +751,9 @@ export default {
             <div class="font-bold">
               Mechatronic Musical Instrument: Performance Feedback (MMIPF)
             </div>
-            <div>Circuit Python | NumPy | Python | Anaconda</div>
+            <div class="text-right w-1/2 md:w-[auto]">
+              Circuit Python | NumPy | Python | Anaconda
+            </div>
           </div>
         </div>
         <div class="flex flex-col font-roboto py-1">
@@ -749,23 +786,27 @@ export default {
             <div class="font-bold">
               University of Central Florida | Orlando, FL
             </div>
-            <div>December 2022</div>
+            <div class="text-right w-1/2 md:w-[auto]">December 2022</div>
           </div>
           <div class="flex justify-between items-center">
             <div class="italic">
               Bachelor of Science in Computer Science, BS
             </div>
-            <div>GPA: 3.762</div>
+            <div class="text-right w-1/2 md:w-[auto]">GPA: 3.762</div>
           </div>
         </div>
         <div class="flex flex-col">
-          <div class="flex items-center font-roboto">
+          <div class="flex items-center gap-1 font-roboto">
             <div class="w-1/2">• T-L.E.A.R.N. alumni of the 2020 cohort</div>
-            <div>• Presenter at the Student Scholar Symposium</div>
+            <div class="w-1/2">
+              • Presenter at the Student Scholar Symposium
+            </div>
           </div>
-          <div class="flex items-center font-roboto">
+          <div class="flex items-center gap-1 font-roboto">
             <div class="w-1/2">• S.U.R.F. scholar of the 2021 cohort</div>
-            <div>• Dean’s List (x1); President’s Honor Roll (x3)</div>
+            <div class="w-1/2">
+              • Dean’s List (x1); President’s Honor Roll (x3)
+            </div>
           </div>
         </div>
 
@@ -774,14 +815,14 @@ export default {
             <div class="font-bold">
               State College of Florida, Manatee-Sarasota | Bradenton, FL
             </div>
-            <div>May 2020</div>
+            <div class="text-right w-1/2 md:w-[auto]">May 2020</div>
           </div>
           <div class="flex justify-between items-center">
             <div class="italic">Associate in Arts, AA</div>
-            <div>GPA: 3.7</div>
+            <div class="text-right w-1/2 md:w-[auto]">GPA: 3.7</div>
           </div>
         </div>
-        <div class="flex items-center font-roboto">
+        <div class="flex items-center gap-1 font-roboto">
           <div class="w-1/2">• Dean’s List (x2)</div>
         </div>
       </div>

@@ -108,20 +108,28 @@ export default defineComponent({
     <div class="w-full fixed z-20" ref="navbar">
       <NavigationBar />
     </div>
-    <div class="fixed top-[230px] h-60 w-3/5 z-10">
-      <div class="flex w-full h-full text-black gap-4" ref="header">
-        <img src="profphotocrop.png" class="shadow-md rounded-md" />
-        <div class="border-l-4 border rounded-md custom-translate-left"></div>
-        <div
-          class="flex flex-col justify-center text-sm text-black font-roboto"
-        >
-          <div class="">Hey I'm Tye and I'm a</div>
+    <div class="fixed top-[175px] md:top-[230px] h-60 w-3/5 z-10">
+      <div
+        class="flex flex-col items-center md:flex-row w-full h-full text-black gap-4"
+        ref="header"
+      >
+        <img
+          src="profphotocrop.png"
+          class="shadow-md rounded-md h-40 md:h-full"
+        />
+        <div class="flex gap-4">
+          <div class="border-l-4 border rounded-md custom-translate-left"></div>
           <div
-            class="flex flex-col justify-center gap-4 h-full text-4xl font-roboto custom-translate-left"
+            class="flex flex-col justify-center text-sm text-black font-roboto"
           >
-            <div>Software Engineer</div>
-            <div>Game Developer</div>
-            <div>Embedded Systems Engineer.</div>
+            <div class="">Hey I'm Tye and I'm a</div>
+            <div
+              class="flex flex-col justify-center md:gap-4 h-full text-xl md:text-4xl font-roboto custom-translate-left"
+            >
+              <div>Software Engineer</div>
+              <div>Game Developer</div>
+              <div>Embedded Systems Engineer.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,7 +138,7 @@ export default defineComponent({
       class="relative opacity-95 z-10 top-[600px] text-white shadow-md bg-deepBlack"
     >
       <div class="flex flex-col items-center">
-        <div class="flex flex-col w-9/10 my-20 items-start">
+        <div class="flex flex-col md:w-9/10 my-20 items-start">
           <div class="flex flex-col gap-8 w-full text-2xl text-justify">
             <div class="flex flex-col gap-20">
               <div class="flex flex-col gap-4">
@@ -153,7 +161,7 @@ export default defineComponent({
                 >
                   <i><b>I am a critical thinker.</b></i>
                 </div>
-                <div class="flex items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
                   <div>
                     This is something I rarely find with people I meet. I have a
                     closely knit friend group where we openly share our feelings
@@ -167,7 +175,9 @@ export default defineComponent({
                     managing to creating, exploring, researching, and
                     brainstorming I always ask questions.
                   </div>
-                  <div class="bg-white w-2 rounded-md h-40"></div>
+                  <div
+                    class="hidden md:block bg-white w-2 rounded-md h-40"
+                  ></div>
                   <img src="/thinker.png" class="w-60" />
                 </div>
               </div>
@@ -178,9 +188,11 @@ export default defineComponent({
                 >
                   <i><b>I am a creator.</b></i>
                 </div>
-                <div class="flex items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
                   <img src="/creator.png" class="w-60" />
-                  <div class="bg-white w-2 rounded-md h-40"></div>
+                  <div
+                    class="hidden md:block bg-white w-2 rounded-md h-40"
+                  ></div>
                   <div>
                     Sometimes, I go out of my way to innovate. This means making
                     new architecture for code, desgining my own graphing
@@ -200,7 +212,7 @@ export default defineComponent({
                 >
                   <i><b>I am passionate.</b></i>
                 </div>
-                <div class="flex items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
                   <div>
                     It's often that people take note of my passion, more than I
                     care to notice. It's not fabricated or conterfeit. It comes
@@ -212,7 +224,9 @@ export default defineComponent({
                     the results you want. I think that alone is why I am so
                     passionate.
                   </div>
-                  <div class="bg-white w-2 rounded-md h-40"></div>
+                  <div
+                    class="hidden md:block bg-white w-2 rounded-md h-40"
+                  ></div>
                   <img src="/passionate.png" class="w-60" />
                 </div>
               </div>

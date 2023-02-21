@@ -82,15 +82,19 @@ export default defineComponent({
         </div>
       </div>
       <div class="flex flex-col items-center md:block">
-        <img :src="post.image" class="object-cover w-52 h-52 m-4 float-right" />
+        <img
+          :src="post.image"
+          class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
+        />
         <div
           class="flex flex-col gap-3 text-lg text-justify"
           v-html="post.description"
         />
       </div>
-      <div class="flex justify-center items-center my-2">
-        <div v-html="post.embed"></div>
-      </div>
+      <div
+        class="flex justify-center items-center my-2 w-1/2 md:w-full"
+        v-html="post.embed"
+      />
     </div>
   </div>
 </template>

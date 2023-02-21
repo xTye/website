@@ -66,10 +66,10 @@ export default defineComponent({
       >
         <img class="object-cover w-full h-32" :src="post.image" />
         <div class="flex flex-col justify-between p-4 select-none">
-          <div class="text-black font-bold h-full text-4xl">
+          <div class="text-black font-bold h-full sm:text-xl md:text-4xl">
             {{ post.title }}
           </div>
-          <div class="text-black font-bold">
+          <div class="text-black font-bold h-fit text-sm md:text-base">
             {{ parseDate(post.date.toDate().toString()) }}
           </div>
         </div>
