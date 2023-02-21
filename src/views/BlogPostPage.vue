@@ -81,13 +81,13 @@ export default defineComponent({
           {{ parseDate(post.date) }}
         </div>
       </div>
-      <div class="flex flex-col items-center md:block">
+      <div class="flex flex-col w-full items-center md:block">
         <img
           :src="post.image"
           class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
         />
         <div
-          class="flex flex-col gap-3 text-lg text-justify"
+          class="flex flex-col gap-3 text-lg text-justify w-full"
           v-html="post.description"
         />
       </div>
