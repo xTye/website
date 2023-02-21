@@ -87,7 +87,7 @@ export default defineComponent({
           class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
         />
         <div
-          class="flex flex-col gap-3 text-lg text-justify w-full"
+          class="flex flex-col gap-3 text-lg text-justify w-full md:w-[auto]"
           v-html="post.description"
         />
       </div>
