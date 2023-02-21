@@ -15,7 +15,10 @@ export default defineComponent({
     let post: DocumentData | undefined;
 
     return {
-      id: "",
+      id:
+        typeof this.$route.params.id === "string"
+          ? this.$route.params.id
+          : this.$route.params.id[0],
       post,
       authStore: useAuthStore(),
       parseDate: (date: string) => {
@@ -30,11 +33,6 @@ export default defineComponent({
   },
   async mounted() {
     try {
-      this.id =
-        typeof this.$route.params.id === "string"
-          ? this.$route.params.id
-          : this.$route.params.id[0];
-
       const post = await getDoc(doc(collection(db, "blogs"), this.id));
       const data = post.data();
 
@@ -64,12 +62,12 @@ export default defineComponent({
         class="flex justify-end p-2 w-full text-white"
       >
         <router-link
-          :to="`${id ? '/post/' + id : '/'}`"
+          :to="`/post/${id}`"
           class="bg-gradient-to-r from-blue to-green p-2 rounded-md hover:animate-pulse"
           >Edit Post</router-link
         >
       </div>
-      <div v-if="post">
+      <div v-if="post" class="w-full">
         <div class="flex justify-between w-full pb-4">
           <div class="text-3xl border-b-2 border-b-green">
             {{ post.title }}
@@ -81,7 +79,7 @@ export default defineComponent({
         <div class="flex flex-col w-full items-center md:block">
           <img
             :src="post.image"
-            class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
+            class="object-cover md:w-52 md:h-52 md:float-right m-4"
           />
           <div
             class="flex flex-col gap-3 text-lg text-justify w-full md:w-[auto]"
