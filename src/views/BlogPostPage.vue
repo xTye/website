@@ -87,7 +87,7 @@ export default defineComponent({
           />
         </div>
         <div
-          class="flex justify-center items-center my-2 w-1/2 md:w-full"
+          class="flex justify-center items-center my-2"
           v-html="post.embed"
         />
       </div>
