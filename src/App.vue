@@ -8,14 +8,17 @@ export default {
 };
 </script>
 
+<!-- For transitions add this -->
+<!-- <router-view v-slot="{ Component }">
+  <transition name="slide" mode="out-in">
+    <component :is="Component" :key="$route.path" />
+  </transition>
+</router-view> -->
+
 <template>
   <div class="bg-gradient-to-r from-blue to-green">
     <div class="w-full fixed z-20"><NavigationBar /></div>
-    <router-view v-slot="{ Component }">
-      <transition name="slide" mode="out-in">
-        <component :is="Component" :key="$route.path" />
-      </transition>
-    </router-view>
+    <router-view />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent, Ref } from "vue";
 import LoginButton from "../components/LoginButton.vue";
 export default defineComponent({
   name: "NavHamburgerMenu",
@@ -10,10 +10,13 @@ export default defineComponent({
     return {
       open: ref(false),
       init: ref(true),
+      backgroundDiv: ref(null) as unknown as Ref<HTMLDivElement>,
       height: ref(window.innerHeight),
     };
   },
   mounted() {
+    this.backgroundDiv = this.$refs.backgroundDiv as unknown as HTMLDivElement;
+
     window.addEventListener("resize", () => {
       this.height = window.innerHeight;
     });
@@ -23,7 +26,7 @@ export default defineComponent({
       this.open = !this.open;
       if (this.init) {
         this.init = false;
-        this.$refs.backgroundDiv.style.background = `#000000`;
+        this.backgroundDiv.style.background = `#000000`;
       }
     },
   },

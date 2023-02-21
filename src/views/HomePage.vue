@@ -83,7 +83,7 @@ export default defineComponent({
 
     animate(0);
   },
-  onUnmount() {
+  beforeUnmount() {
     this.renderer.forceContextLoss();
   },
 });
