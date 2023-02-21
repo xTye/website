@@ -9,7 +9,6 @@ import {
   Timestamp,
   updateDoc,
 } from "firebase/firestore";
-import NavigationBar from "../components/NavigationBar.vue";
 import TiptapComponent from "../components/TiptapComponent.vue";
 import { useAuthStore } from "@/store";
 import { Editor } from "@tiptap/vue-3";
@@ -17,7 +16,6 @@ import { Editor } from "@tiptap/vue-3";
 export default defineComponent({
   name: "UpdatePostPage",
   components: {
-    NavigationBar,
     TiptapComponent,
   },
   data() {
@@ -100,7 +98,8 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-col items-center min-h-screen pb-5 bg-deepBlack">
-    <NavigationBar />
+    <div class="w-full fixed z-[19] h-24 bg-deepBlack" />
+    <div class="mt-24" />
     <div
       class="flex flex-col justify-center items-center w-full h-full lg:w-4/5 text-white"
     >

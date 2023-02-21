@@ -1,12 +1,8 @@
 <script lang="ts">
-import NavigationBar from "../components/NavigationBar.vue";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "MediaPage",
-  components: {
-    NavigationBar,
-  },
   data() {
     return {
       videos: [
@@ -34,6 +30,7 @@ export default defineComponent({
         "During my years in community college, and before I went to Japan, I took several film courses. This short film was made in FIL 1000, where we worked in a small group of 5 people to create a short film. This film the best in the class, and has recieved one award.",
       ],
       currentVideo: 0,
+      width: ref(window.innerWidth),
     };
   },
   methods: {
@@ -42,6 +39,10 @@ export default defineComponent({
     },
   },
   mounted() {
+    window.addEventListener("resize", () => {
+      this.width = window.innerWidth;
+    });
+
     setInterval(() => {
       this.currentVideo = (this.currentVideo + 1) % this.videos.length;
     }, 7000);
@@ -51,32 +52,41 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-col pb-5 min-h-screen bg-deepBlack overscroll-none">
-    <NavigationBar />
-    <div
-      v-for="(vid, i) in videos"
-      :key="i"
-      class="hidden md:block relative rounded-xl drop-shadow-md overflow-hidden"
-    >
+    <div class="w-full fixed z-[19] h-24 bg-deepBlack" />
+    <div class="mt-24" />
+    <div v-if="width > 768">
       <div
-        class="absolute flex flex-col justify-center items-center w-full h-full z-10 text-white text-opacity-0 hover:bg-black hover:opacity-90 hover:text-opacity-100"
+        v-for="(vid, i) in videos"
+        :key="i"
+        class="relative drop-shadow-md overflow-hidden"
       >
-        <div class="text-2xl">{{ titles[i] }}</div>
-        <div class="w-9/10 text-justify">{{ descriptions[i] }}</div>
+        <div
+          class="absolute flex flex-col justify-center items-center w-full h-full z-10 text-white text-opacity-0 hover:bg-black hover:opacity-90 hover:text-opacity-100"
+        >
+          <div class="text-2xl">{{ titles[i] }}</div>
+          <div class="w-9/10 text-justify">{{ descriptions[i] }}</div>
+        </div>
+        <!-- what is the tag for disabling mobile popups -->
+        <!-- disble popups for mobile video -->
+
+        <video
+          autoplay
+          loop
+          muted
+          disablePictureInPicture
+          disablePopup
+          controls
+          :class="currentVideo === i ? '' : 'hidden'"
+          class="-my-1/10"
+        >
+          <source :src="vid" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <video
-        autoplay
-        loop
-        muted
-        disablePictureInPicture
-        disablePopup
-        :class="currentVideo === i ? '' : 'hidden'"
-        class="-my-1/10"
-      >
-        <source :src="vid" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
     </div>
-    <div class="flex flex-col mt-12 gap-10 justify-center items-center w-full">
+    <div
+      class="flex flex-col md:mt-12 gap-10 justify-center items-center w-full"
+    >
       <div class="grid gap-4 grid-cols-3">
         <img src="/media-page/images/div1-11.jpg" />
         <img src="/media-page/images/div1-12.jpg" />

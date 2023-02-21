@@ -43,7 +43,7 @@ export default defineComponent({
       editorProps: {
         attributes: {
           class:
-            "h-64 focus:outline-none bg-white text-black border-2 border-black p-2 rounded-b-md overflow-auto",
+            "h-96 focus:outline-none bg-white text-black border-2 border-black p-2 rounded-b-md overflow-auto",
         },
       },
     });

@@ -1,20 +1,6 @@
 <script lang="ts">
-import { ref } from "vue";
-import NavigationBar from "@/components/NavigationBar.vue";
-import VuePdfEmbed from "vue-pdf-embed";
-
 export default {
   name: "ResumePage",
-  components: {
-    NavigationBar,
-  },
-  data() {
-    return {
-      sourceGame: "/resume_game.pdf",
-      sourceSoft: "/resume_soft.pdf",
-      wrapper: ref<HTMLElement>(),
-    };
-  },
 };
 </script>
 
@@ -22,11 +8,9 @@ export default {
   <div
     class="flex flex-col items-center w-full min-h-screen h-full bg-deepBlack"
   >
-    <NavigationBar />
-    <div
-      class="flex flex-col w-full md:w-11/12 gap-4 justify-center"
-      ref="wrapper"
-    >
+    <div class="w-full fixed z-[19] h-24 bg-deepBlack" />
+    <div class="mt-24" />
+    <div class="flex flex-col w-full md:w-11/12 gap-4 justify-center">
       <div class="bg-gradient-to-r from-blue to-green h-4"></div>
       <div
         class="flex flex-col md:flex-row items-center gap-4 text-white font-noto"

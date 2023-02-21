@@ -6,6 +6,9 @@ export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   strict: true,
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((to, from, next) => {

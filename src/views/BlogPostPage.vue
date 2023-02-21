@@ -2,22 +2,17 @@
 import { defineComponent } from "vue";
 import { db } from "@/main";
 import { collection, DocumentData, getDoc, doc } from "firebase/firestore";
-import NavigationBar from "../components/NavigationBar.vue";
 import { useAuthStore } from "@/store";
+
+import LoadingComponent from "@/components/LoadingComponent.vue";
 
 export default defineComponent({
   name: "BlogPostPage",
   components: {
-    NavigationBar,
+    LoadingComponent,
   },
   data() {
-    let post: DocumentData = {
-      title: "",
-      description: "",
-      date: "",
-      image: "",
-      embed: "",
-    };
+    let post: DocumentData | undefined;
 
     return {
       id: "",
@@ -59,7 +54,8 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-col items-center min-h-screen pb-5 bg-deepBlack">
-    <NavigationBar />
+    <div class="w-full fixed z-[19] h-24 bg-deepBlack" />
+    <div class="mt-24" />
     <div
       class="flex flex-col justify-center items-center w-full h-full lg:w-4/5 text-white"
     >
@@ -68,33 +64,37 @@ export default defineComponent({
         class="flex justify-end p-2 w-full text-white"
       >
         <router-link
-          :to="`/post/${id}`"
+          :to="`${id ? '/post/' + id : '/'}`"
           class="bg-gradient-to-r from-blue to-green p-2 rounded-md hover:animate-pulse"
           >Edit Post</router-link
         >
       </div>
-      <div class="flex justify-between w-full pb-4">
-        <div class="text-3xl border-b-2 border-b-green">
-          {{ post.title }}
+      <div v-if="post">
+        <div class="flex justify-between w-full pb-4">
+          <div class="text-3xl border-b-2 border-b-green">
+            {{ post.title }}
+          </div>
+          <div class="text-md">
+            {{ parseDate(post.date) }}
+          </div>
         </div>
-        <div class="text-md">
-          {{ parseDate(post.date) }}
+        <div class="flex flex-col w-full items-center md:block">
+          <img
+            :src="post.image"
+            class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
+          />
+          <div
+            class="flex flex-col gap-3 text-lg text-justify w-full md:w-[auto]"
+            v-html="post.description"
+          />
         </div>
-      </div>
-      <div class="flex flex-col w-full items-center md:block">
-        <img
-          :src="post.image"
-          class="object-cover w-full md:w-52 md:h-52 m-4 float-right"
-        />
         <div
-          class="flex flex-col gap-3 text-lg text-justify w-full md:w-[auto]"
-          v-html="post.description"
+          class="flex justify-center items-center my-2 w-1/2 md:w-full"
+          v-html="post.embed"
         />
       </div>
-      <div
-        class="flex justify-center items-center my-2 w-1/2 md:w-full"
-        v-html="post.embed"
-      />
+
+      <LoadingComponent v-else />
     </div>
   </div>
 </template>

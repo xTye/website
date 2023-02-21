@@ -63,11 +63,9 @@ export default defineComponent({
         authStore.loggedIn ? so() : login();
       }
     "
-    class="duration-0 hover:transition duration-300"
+    class=""
   >
-    <div
-      class="text-center p-2 w-20 h-auto hover:border-b-2 hover:bg-black hover:bg-opacity-50 transition duration-200"
-    >
+    <div>
       {{ authStore.loggedIn ? `Sign Out` : `Login` }}
     </div>
   </button>

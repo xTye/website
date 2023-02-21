@@ -1,12 +1,10 @@
 <script lang="ts">
-import NavigationBar from "@/components/NavigationBar.vue";
 import { defineComponent, DefineComponent } from "vue";
 import * as THREE from "three";
 import { particles } from "../scripts/particles";
 
 export default defineComponent({
   name: "AnimationsPage",
-  components: { NavigationBar },
   data() {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
 
@@ -15,8 +13,6 @@ export default defineComponent({
     };
   },
   mounted() {
-    let mouseX = 0;
-    let mouseY = 0;
     let scrollSpeed = 0;
     let scrollForce = 0;
     let scrollTotal = 0;
@@ -30,16 +26,10 @@ export default defineComponent({
     );
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    //this.renderer.setClearColor("#d9ed92");
 
     const group = particles(scene);
 
     camera.position.z = 5;
-
-    // document.addEventListener("mousemove", (e) => {
-    //   mouseX = e.clientX / 1000;
-    //   mouseY = e.clientY / 1000;
-    // });
 
     let headerDiv = this.$refs.header as unknown as HTMLDivElement;
     let navbarDiv = this.$refs.navbar as unknown as HTMLDivElement;
@@ -93,7 +83,7 @@ export default defineComponent({
 
     animate(0);
   },
-  beforeUnmount() {
+  onUnmount() {
     this.renderer.forceContextLoss();
   },
 });
@@ -105,9 +95,7 @@ export default defineComponent({
       class="fixed top-0 left-0 bg-gradient-to-r from-blue to-green"
       ref="parentDiv"
     ></div>
-    <div class="w-full fixed z-20" ref="navbar">
-      <NavigationBar />
-    </div>
+    <div class="w-full fixed z-[19] h-24" ref="navbar" />
     <div class="fixed top-[175px] md:top-[230px] h-60 w-3/5 z-10">
       <div
         class="flex flex-col items-center md:flex-row w-full h-full text-black gap-4"
