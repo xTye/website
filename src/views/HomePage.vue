@@ -135,12 +135,38 @@ export default defineComponent({
                 >
                   About me
                 </div>
-                <div>
-                  My name is Tye and I like creating things I'm proud of. The
-                  purpose of this website was to create a place where all of my
-                  media can be found in one place. I have many hobbies ranging
-                  from video editing, coding, game development, gaming, keyboard
-                  making, 3d printing and much more.
+                <div class="text-2xl">
+                  <div>
+                    I'm a software engineer, game developer, and embedded
+                    systems engineer. I've worked in different roles as a
+                    project manager, game, front-end, and back-end developer to
+                    complete projects under strict deadlines.
+                  </div>
+                  <div class="pl-4">
+                    <div>
+                      • As a project manager I utilized Git, Trello, PowerPoint,
+                      and Microsoft Teams to manage and communicate project
+                      guidelines and deadlines.
+                    </div>
+                    <div>
+                      • As a game developer I designed and developed games using
+                      Unity Game Engine and TypeScript APIs. I created my own
+                      assets using Blender and Photoshop. I designed terrain
+                      using Gaia, managed state machines for animations, and
+                      tweaked shaders and VFX all in Unity.
+                    </div>
+                    <div>
+                      • As a front-end developer I worked extensively with
+                      React, Vue, Next and Tailwind CSS to extrapolate existing
+                      designs based on Figma drafts.
+                    </div>
+                    <div>
+                      • As a back-end developer I managed data flow with
+                      Express, and Next to communicate with Mongoose and Prisma
+                      ORMs in order to receive data from MySQL, MongoDB, Redis,
+                      and Firestore databases.
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="flex flex-col gap-4">
