@@ -16,9 +16,10 @@
     font-size: 1.17em;
   }
   blockquote {
-    background: #f6f2ee;
+    color: #fff;
+    background: #0d3600;
     border-radius: 0.25rem;
-    border-left: 0.25rem solid #ccc;
+    border-left: 0.25rem solid #00860b;
     padding: 0 0.5rem;
   }
   li {
@@ -37,6 +38,6 @@
     color: inherit;
     padding: 0;
     background: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
